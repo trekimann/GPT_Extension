@@ -1,0 +1,49 @@
+{
+  "name": "gpt_extension",
+  "version": "0.0.1",
+  "description": "Visual Studio Code extension to embed ChatGPT",
+  "main": "out/extension.js",
+  "activationEvents": [
+    "onCommand:extension.openChatGPT",
+    "onCommand:extension.showWebView"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "tsc -w -p tsconfig.json"
+  },
+  "files": [
+    "out/**/*",
+    "src/**/*",
+    "src/webview.html"
+  ],
+  "keywords": [
+    "GPT",
+    "Extension"
+  ],
+  "author": "Trekimann",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "@types/vscode": "^1.74.0",
+    "typescript": "^4.9.4"
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "webview.show",
+        "title": "Open ChatGPT"
+      }
+    ],
+    "views": {
+      "editor": [
+        {
+          "id": "webview",
+          "name": "Webview"
+        }
+      ]
+    }
+  },
+  "engines": {
+    "vscode": "^1.0.0"
+  }
+}
